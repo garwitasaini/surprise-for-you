@@ -1,0 +1,761 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #F8F0E4;
+    --coffee: #6B4A3A;
+    --deep-coffee: #3B2921;
+    --soft-beige: #E8D5BC;
+    --beige: #D2B896;
+    --text: #63483B;
+    --light-coffee: #8A6855;
+    --gold: #B89A72;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #FFFDF8 0%,
+            #F8F0E4 35%,
+            #E8D5BC 100%
+        );
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.35;
+}
+
+.glow-one {
+    background: #C9AA87;
+    top: -130px;
+    left: -100px;
+}
+
+.glow-two {
+    background: #A9856E;
+    right: -130px;
+    bottom: -120px;
+}
+
+
+/* Stars */
+
+.stars span {
+    position: absolute;
+
+    color: #B89A72;
+
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.stars span:nth-child(1) {
+    top: 12%;
+    left: 15%;
+}
+
+.stars span:nth-child(2) {
+    top: 25%;
+    left: 82%;
+    animation-delay: 1s;
+}
+
+.stars span:nth-child(3) {
+    top: 70%;
+    left: 12%;
+    animation-delay: 1.5s;
+}
+
+.stars span:nth-child(4) {
+    top: 78%;
+    left: 88%;
+    animation-delay: .5s;
+}
+
+.stars span:nth-child(5) {
+    top: 18%;
+    left: 55%;
+    animation-delay: 2s;
+}
+
+.stars span:nth-child(6) {
+    top: 60%;
+    left: 78%;
+}
+
+.stars span:nth-child(7) {
+    top: 84%;
+    left: 35%;
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: .25;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* Floating hearts */
+
+.floating-hearts span {
+    position: absolute;
+
+    bottom: -30px;
+
+    color: #C9AA87;
+
+    font-family: serif;
+
+    opacity: 0;
+
+    animation: floatHeart 9s linear infinite;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 8%;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 5s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 45%;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 67%;
+    animation-delay: 6s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 93%;
+    animation-delay: 7s;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .5;
+    }
+
+    80% {
+        opacity: .35;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    position: absolute;
+
+    top: 18%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.tiny {
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #9A7967;
+
+    margin-bottom: 18px;
+}
+
+.intro h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 9vw, 70px);
+
+    line-height: .88;
+
+    font-weight: 400;
+
+    color: #5A4033;
+}
+
+.intro h1 em {
+    color: #8A6855;
+}
+
+.line {
+    width: 45px;
+    height: 1px;
+
+    background: #B89A72;
+
+    margin: 25px auto;
+}
+
+.tap-text {
+    font-size: 12px;
+
+    color: #8A6B5B;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift-section {
+    position: absolute;
+
+    left: 50%;
+    bottom: 9%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.gift-area {
+    width: 220px;
+    height: 200px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    margin: auto;
+}
+
+
+/* Heart above gift */
+
+.gift-heart {
+    position: absolute;
+
+    left: 50%;
+    top: -45px;
+
+    transform: translateX(-50%);
+
+    font-family: serif;
+
+    color: #A98267;
+
+    font-size: 32px;
+
+    animation: heartFloat 2.5s ease-in-out infinite;
+
+    z-index: 20;
+}
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-9px);
+    }
+}
+
+
+/* Gift box */
+
+.gift-box {
+    position: absolute;
+
+    width: 170px;
+    height: 125px;
+
+    left: 25px;
+    bottom: 20px;
+
+    filter:
+        drop-shadow(0 20px 18px rgba(65, 42, 30, .22));
+
+    transition: transform .4s ease;
+}
+
+.gift-area:hover .gift-box {
+    transform: translateY(-5px);
+}
+
+
+/* Body */
+
+.box-body {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 170px;
+    height: 100px;
+
+    border-radius: 4px 4px 12px 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8A6855,
+            #634638
+        );
+
+    overflow: hidden;
+}
+
+
+/* Ribbon */
+
+.front-ribbon {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 25px;
+    height: 100%;
+
+    background: rgba(242, 226, 204, .72);
+}
+
+.front-ribbon::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,.32),
+        transparent
+    );
+}
+
+
+/* Shine */
+
+.box-shine {
+    position: absolute;
+
+    width: 70px;
+    height: 180px;
+
+    background: rgba(255,248,237,.12);
+
+    transform: rotate(25deg);
+
+    left: -100px;
+
+    animation: shine 4s ease-in-out infinite;
+}
+
+@keyframes shine {
+
+    0% {
+        left: -100px;
+    }
+
+    40%,
+    100% {
+        left: 210px;
+    }
+}
+
+
+/* Lid */
+
+.lid {
+    position: absolute;
+
+    z-index: 10;
+
+    left: -7px;
+    top: 15px;
+
+    width: 184px;
+    height: 35px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #96725D,
+            #634638
+        );
+
+    transition:
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* Lid ribbon */
+
+.lid-ribbon {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 25px;
+    height: 35px;
+
+    background: rgba(242,226,204,.72);
+}
+
+
+/* Bow */
+
+.bow {
+    position: absolute;
+
+    top: -27px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.bow-part {
+    position: absolute;
+
+    width: 48px;
+    height: 30px;
+
+    background: #9A735C;
+
+    border: 2px solid #795745;
+
+    border-radius: 50% 50% 50% 10%;
+}
+
+.bow-left {
+    right: 4px;
+    transform: rotate(25deg);
+}
+
+.bow-right {
+    left: 4px;
+
+    transform:
+        scaleX(-1)
+        rotate(25deg);
+}
+
+.bow-knot {
+    position: absolute;
+
+    left: -9px;
+    top: 6px;
+
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+
+    background: #795745;
+}
+
+
+/* Open */
+
+.gift-area.open .lid {
+    transform:
+        translateY(-90px)
+        rotate(-6deg);
+}
+
+
+/* =========================
+   OPEN TEXT
+========================= */
+
+.open-text {
+    margin-top: 18px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
+    color: #806252;
+
+    transition: opacity .4s ease;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 50;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(67, 45, 34, .18);
+
+    backdrop-filter: blur(14px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 1s ease;
+}
+
+.letter-section.show {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* Letter */
+
+.letter {
+    width: min(440px, 100%);
+
+    max-height: 80vh;
+
+    overflow: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFDF8,
+            #F3E5D2
+        );
+
+    border: 1px solid #DCC5A8;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 30px 80px rgba(72, 45, 32, .20);
+
+    padding: 28px;
+
+    transform:
+        translateY(80px)
+        scale(.88);
+
+    transition:
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.letter-section.show .letter {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* Letter top */
+
+.letter-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    color: #B08A68;
+
+    margin-bottom: 28px;
+}
+
+.letter-top small {
+    letter-spacing: 3px;
+
+    font-size: 9px;
+
+    color: #8C6C5A;
+}
+
+
+/* Content */
+
+.letter-content {
+    padding: 0 12px;
+}
+
+.letter-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    color: #604437;
+
+    margin-bottom: 20px;
+}
+
+.letter-content p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+    line-height: 1.65;
+
+    color: #674B3D;
+
+    text-align: left;
+}
+
+
+/* Signature */
+
+.signature {
+    margin-top: 28px;
+
+    text-align: right;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+
+    font-style: italic;
+
+    color: #9A735C;
+}
+
+
+/* Bottom */
+
+.letter-bottom {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #B89A72;
+
+    letter-spacing: 6px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .intro {
+        top: 15%;
+    }
+
+    .intro h1 {
+        font-size: 48px;
+    }
+
+    .gift-section {
+        bottom: 10%;
+    }
+
+    .letter {
+        padding: 25px 20px;
+    }
+
+    .letter-content p {
+        font-size: 19px;
+    }
+}
